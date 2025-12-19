@@ -32,7 +32,6 @@
                 "year": 2022
             }
         },
-        
         {
             "id": "prop3",
             "type": "Condo",
@@ -48,8 +47,7 @@
                 "day": 14,
                 "year": 2022
             }
-        },	
-        
+        },
         {
             "id": "prop4",
             "type": "Bungalow",
@@ -66,8 +64,7 @@
                 "year": 2025
             }
         },
-        
-        	{
+        {
             "id": "prop5",
             "type": "Detached House",
             "bedrooms": 2,
@@ -82,7 +79,7 @@
                 "day": 11,
                 "year": 2022
             }
-        }	,
+        },
         {
             "id": "prop6",
             "type": "Villa",
@@ -99,7 +96,6 @@
                 "year": 2022
             }
         },
-        
         {
             "id": "prop7",
             "type": "Flat",
