@@ -1,0 +1,13 @@
+.search-filter-dropdown {
+    display: grid;
+    grid-template-columns: repeat(2, 0.5fr);
+    width: 100%;
+}
+
+.apply-filters-btn {
+    width: 150px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: #b4befe;
+    border-radius: 10px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './SearchFilter.css';
 // a grid of search filters that show up when the arrow is clicked, moved to a seperate file for readability purposes
 
 const SearchFilter = () => {

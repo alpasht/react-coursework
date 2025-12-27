@@ -1,0 +1,45 @@
+#hero-container {
+    height: 600px;
+    width: cover;
+    background-position: 30% 60%;
+}
+
+.hero-container {
+    width: 100%;
+    height: 500px;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    width: 100%;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 3rem;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 65%;
+    /* shows a cropped part of the image */
+    display: block;
+    filter: blur(3px);
+    border-radius: 25px;
+}

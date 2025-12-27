@@ -1,4 +1,5 @@
 import PropertyList from "./PropertyList";
+import './Properties.css';
 
 function FavouriteProperties({ favouriteProperties, onRemoveFavourite }) {
     return (

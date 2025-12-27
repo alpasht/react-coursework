@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './SearchBox.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import SearchFilter from './SearchFilter';

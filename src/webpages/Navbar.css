@@ -1,0 +1,50 @@
+.nav-links {
+    display: flex;
+    margin-right: 50px;
+    gap: 30px;
+    font-size: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #cdd6f4;
+    text-decoration: none;
+    width: inherit;
+    padding-top: 20px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #f5c2e7;
+    transition: width 0.4s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #f5c2e7;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e1e2e;
+    background-size: cover;
+    height: 100px;
+    /* stop navbar stretching too much */
+}
+
+.navbar img {
+    display: flex;
+    height: 100px;
+    width: 120px;
+}

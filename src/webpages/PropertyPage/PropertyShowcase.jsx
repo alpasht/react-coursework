@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom';
+import './PropertyShowcase.css';
 import { useEffect, useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';

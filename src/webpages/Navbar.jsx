@@ -1,13 +1,20 @@
 // wip add href links
+import './Navbar.css';
 import { Link } from 'react-router-dom';
-import Logo from './assets/minimalist-logo.jpg'
-import ThemeWidget from './ThemeWidget';
+import Logo from '../assets/minimalist-logo.jpg'
+import ThemeWidget from '../../components/ThemeWidget';
 
 function Navbar() {
-    //we want to return all of this div 
+
+    const links = [
+        { href: "/", label: "Home" },
+        { href: "/property", label: "Browse Properties" },
+        { href: "/contact", label: "Contact Us" },
+        { href: "/about", label: "About Us" },
+    ];
     return (
         <>
-            <div className="navbar-container">
+            <nav className="navbar-container">
                 <div className="navbar">
 
                     <img src={Logo} alt="minimalist logo"></img>
@@ -20,7 +27,7 @@ function Navbar() {
                         <li> <ThemeWidget /> </li>
                     </ul>
                 </div>
-            </div>
+            </nav>
         </>
     )
 }

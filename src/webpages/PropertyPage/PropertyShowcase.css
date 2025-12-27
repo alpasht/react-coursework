@@ -1,0 +1,15 @@
+.section-container {
+    display: grid;
+    grid-template-columns: 65% 35%;
+}
+
+.left-section {
+    background-color: var(--element-bg);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.right-section {
+    background-color: var(--element-bg);
+    transition: background-color 0.3s ease;
+}

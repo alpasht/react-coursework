@@ -1,4 +1,5 @@
-import propertyImage from './assets/property-thumbnail.jpg';
+import propertyImage from '../assets/property-thumbnail.jpg';
+import './Hero.css';
 function Hero() {
     return (
         <>
@@ -7,7 +8,7 @@ function Hero() {
                     className="hero-img"></img>
                 <div className="hero-text">
                     <h1>Welcome!</h1>
-                    <p>Your estate journey starts here</p>
+                    <p>Your real estate journey starts <b>here</b></p>
                 </div>
             </div>
 

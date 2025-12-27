@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import Navbar from './Navbar'
-import Hero from './Hero'
-import SearchBox from './SearchBox'
-import Properties from './Properties'
-import './index.css'
-import FavouriteProperties from './FavouriteProperties'
+import Navbar from '../Navbar'
+import Hero from '../Hero'
+import SearchBox from '../SearchBox'
+import Properties from '../PropertyPage/Properties'
+import '../index.css'
+import FavouriteProperties from '../PropertyPage/FavouriteProperties'
 
-import PropertyShowcase from './PropertyShowcase';
+import PropertyShowcase from '../PropertyPage/PropertyShowcase';
 
-function App() {
+function Home() {
     const [searchTerm, setSearchTerm] = useState('');
     const [favouriteProperties, setFavouriteProperties] = useState([])
     const addFavourite = property => {
@@ -43,4 +43,4 @@ function App() {
     )
 }
 
-export default App
+export default Home
