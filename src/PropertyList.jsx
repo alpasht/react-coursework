@@ -1,13 +1,14 @@
-function PropertyList({items, renderItems, emptyMessage="No properties found"}){
+function PropertyList({ items, renderItems, emptyMessage = "No properties found" }) {
     if (!items.length) return <p>{emptyMessage}</p>
 
     return (
-        <ul>
-            {items.map((item,index) => (
-                <li key={index}>{renderItems(item)}</li>
+        <div className="property-grid">
+            {items.map((item) => (
+                <div key={item.id}>
+                    {renderItems(item)}
+                </div>
             ))}
-        </ul>
-    
+        </div>
     )
 }
 export default PropertyList
