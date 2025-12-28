@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Navbar from '../Navbar'
 import Hero from '../Hero'
@@ -23,23 +23,21 @@ function Home() {
     }
 
     return (
-        <Router>
-            <div className="home-container">
-                <Navbar />
-                {/* router helps to avoid favourite properties from being lost when navigating to a different page */}
-                <Routes>
-                    <Route path="/" element={
-                        <>
-                            <Hero />
-                            <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-                            <Properties searchTerm={searchTerm} onFavourite={addFavourite} favouriteProperties={favouriteProperties} />
-                            <FavouriteProperties favouriteProperties={favouriteProperties} onRemoveFavourite={removeFavourite} />
-                        </>
-                    } />
-                    <Route path="/property/:id" element={<PropertyShowcase />} />
-                </Routes>
-            </div>
-        </Router>
+        <div className="home-container">
+            <Navbar />
+            {/* router helps to avoid favourite properties from being lost when navigating to a different page */}
+            <Routes>
+                <Route path="/" element={
+                    <>
+                        <Hero />
+                        <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                        <Properties searchTerm={searchTerm} onFavourite={addFavourite} favouriteProperties={favouriteProperties} />
+                        <FavouriteProperties favouriteProperties={favouriteProperties} onRemoveFavourite={removeFavourite} />
+                    </>
+                } />
+                <Route path="/property/:id" element={<PropertyShowcase />} />
+            </Routes>
+        </div>
     )
 }
 
