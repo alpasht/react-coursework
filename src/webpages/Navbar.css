@@ -48,3 +48,51 @@
     height: 100px;
     width: 120px;
 }
+
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: #cdd6f4;
+    cursor: pointer;
+    align-self: center;
+    margin-right: 20px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        z-index: 1001;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px; /* Matches navbar height */
+        right: 0;
+        background-color: #1e1e2e;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        margin-right: 0;
+        gap: 20px;
+        z-index: 1000;
+        border-top: 1px solid #313244;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 24px;
+    }
+}
