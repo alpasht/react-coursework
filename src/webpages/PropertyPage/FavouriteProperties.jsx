@@ -1,11 +1,11 @@
-import PropertyList from "./PropertyList";
+import PropertyGrid from "./PropertyGrid";
 import './Properties.css';
 
 function FavouriteProperties({ favouriteProperties, onRemoveFavourite }) {
     return (
         <div className="favourite-properties">
             <h2>Favourite Properties</h2>
-            <PropertyList
+            <PropertyGrid
                 items={favouriteProperties}
                 emptyMessage="You have no favourite properties"
                 renderItems={properties => (

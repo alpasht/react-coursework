@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import Home from './HomePage/Home'
+import Property from './PropertyPage/Property'
 
 import Footer from '../Footer';
 
 function App() {
     return (
         <Router>
-            <Home />
+            <Property />
             <Footer />
         </Router>
     )
