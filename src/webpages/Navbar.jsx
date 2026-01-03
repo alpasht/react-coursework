@@ -26,10 +26,10 @@ function Navbar() {
                     </div>
 
                     <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-                        <li> <Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link> </li>
-                        <li> <Link to="/property" onClick={() => setIsMenuOpen(false)}>Properties</Link> </li>
-                        <li> <Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link> </li>
-                        <li> <Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link> </li>
+                        <li> <Link to="/" onClick={() => setIsMenuOpen(false)}><span>Home</span></Link> </li>
+                        <li> <Link to="/property" onClick={() => setIsMenuOpen(false)}><span>Properties</span></Link> </li>
+                        <li> <Link to="/contact" onClick={() => setIsMenuOpen(false)}><span>Contact</span></Link> </li>
+                        <li> <Link to="/about" onClick={() => setIsMenuOpen(false)}><span>About Us</span></Link> </li>
                         <li> <ThemeWidget /> </li>
                     </ul>
                 </div>
