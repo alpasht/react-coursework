@@ -1,40 +1,39 @@
 import { Routes, Route } from 'react-router-dom';
-import { useState } from 'react';
 import Navbar from '../Navbar'
 import Hero from '../Hero'
-import SearchBox from '../SearchBox'
-import Properties from '../PropertyPage/Properties'
 import '../index.css'
-import FavouriteProperties from '../PropertyPage/FavouriteProperties'
-
+import './Home.css'
 import PropertyShowcase from '../PropertyPage/PropertyShowcase';
+import Property from '../PropertyPage/Property';
 
 function Home() {
-    const [searchTerm, setSearchTerm] = useState('');
-    const [favouriteProperties, setFavouriteProperties] = useState([])
-    const addFavourite = property => {
-        if (!favouriteProperties.some(p => p.id === property.id)) {
-            setFavouriteProperties([...favouriteProperties, property])
-        }
-    }
-
-    const removeFavourite = property => {
-        setFavouriteProperties(favouriteProperties.filter(p => p.id !== property.id))
-    }
-
     return (
         <div className="home-container">
             <Navbar />
-            {/* router helps to avoid favourite properties from being lost when navigating to a different page */}
             <Routes>
                 <Route path="/" element={
                     <>
                         <Hero />
-                        <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-                        <Properties searchTerm={searchTerm} onFavourite={addFavourite} favouriteProperties={favouriteProperties} />
-                        <FavouriteProperties favouriteProperties={favouriteProperties} onRemoveFavourite={removeFavourite} />
+                        <div className="info-section">
+                            <h2 className="info-title">Why Choose Us</h2>
+                            <div className="info-grid">
+                                <div className="info-card">
+                                    <h3>Buy a Property</h3>
+                                    <p>Find your place with an immersive photo experience and the most listings, including things you won't find anywhere else.</p>
+                                </div>
+                                <div className="info-card">
+                                    <h3>Rent a Property</h3>
+                                    <p>We’re creating a seamless online experience – from shopping on the largest rental network, to applying, to paying rent.</p>
+                                </div>
+                                <div className="info-card">
+                                    <h3>Expert Support</h3>
+                                    <p>Our team of experienced agents is dedicated to helping you through every step of your real estate journey.</p>
+                                </div>
+                            </div>
+                        </div>
                     </>
                 } />
+                <Route path="/property" element={<Property />} />
                 <Route path="/property/:id" element={<PropertyShowcase />} />
             </Routes>
         </div>
