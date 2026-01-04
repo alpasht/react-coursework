@@ -1,5 +1,7 @@
 import './About.css';
 import propertyImage from '../../assets/property-thumbnail.jpg';
+import happyCoworkersImg from '/src/assets/happyCoworkersImg.jpg';
+import ourVisionImg from '/src/assets/ourVisionImg.jpg';
 
 function About() {
     return (
@@ -9,7 +11,7 @@ function About() {
             <div className="about-section">
                 <div className="about-grid">
                     <div className="about-image">
-                        <img src={propertyImage} alt="Our Vision" />
+                        <img src={ourVisionImg} alt="Our Vision" />
                     </div>
                     <div className="about-content">
                         <h2>Our Vision</h2>
@@ -35,7 +37,7 @@ function About() {
                         </p>
                     </div>
                     <div className="about-image">
-                        <img src={propertyImage} alt="Our Difference" style={{ filter: 'hue-rotate(45deg)' }} /> {/* Just to vary the image slightly for demo */}
+                        <img src={happyCoworkersImg} alt="Our Difference" />
                     </div>
                 </div>
 
