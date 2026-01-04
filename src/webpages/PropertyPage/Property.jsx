@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from '../Navbar';
-import Hero from '../Hero';
 import SearchBox from '../SearchBox';
 import PropertyGrid from './PropertyGrid';
 import PropertyCard from './PropertyCard';
@@ -47,12 +46,11 @@ function Property() {
 
     return (
         <div className="property-container">
-            <Navbar />
+
             {/* router helps to avoid favourite properties from being lost when navigating to a different page */}
             <Routes>
                 <Route path="/" element={
                     <>
-                        <Hero />
                         <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
                         {loading && <p>Loading properties...</p>}
                         {error && <p>Error: {error}</p>}

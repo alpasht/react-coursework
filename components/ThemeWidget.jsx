@@ -12,13 +12,19 @@ const ThemeWidget = () => {
         if (newIsDark) {
             // Catppuccin Mocha (Dark)
             document.body.style.setProperty('--bg-color', '#1e1e2e');
+            document.body.style.setProperty('--nav-bg', '#181825');
             document.body.style.setProperty('--text-color', '#cdd6f4');
             document.body.style.setProperty('--element-bg', '#313244');
+            document.body.style.setProperty('--accent-color', '#f5c2e7');
+            document.body.style.setProperty('--secondary-color', '#a6adc8');
         } else {
             // Catppuccin Latte (Light)
             document.body.style.setProperty('--bg-color', '#eff1f5');
+            document.body.style.setProperty('--nav-bg', '#e6e9ef');
             document.body.style.setProperty('--text-color', '#4c4f69');
             document.body.style.setProperty('--element-bg', '#ffffff');
+            document.body.style.setProperty('--accent-color', '#ea76cb');
+            document.body.style.setProperty('--secondary-color', '#9ca0b0');
         }
     };
 
@@ -29,7 +35,7 @@ const ThemeWidget = () => {
                 background: 'none',
                 border: 'none',
                 cursor: 'pointer',
-                color: '#cdd6f4', // Keep consistent with navbar links
+                color: 'var(--text-color)', // Keep consistent with navbar links
                 padding: '10px',
                 fontSize: '1.2rem',
                 display: 'flex',

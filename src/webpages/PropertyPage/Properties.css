@@ -45,7 +45,7 @@
     position: absolute;
     top: 15px;
     left: 15px;
-    background-color: #ff6b6b;
+    background-color: var(--accent-color);
     color: white;
     padding: 5px 12px;
     border-radius: 20px;
@@ -81,8 +81,8 @@
 .card-button {
     width: 100%;
     padding: 12px;
-    background-color: #1e1e2e;
-    color: white;
+    background-color: var(--text-color);
+    color: var(--bg-color);
     border: none;
     border-radius: 8px;
     font-weight: 600;
@@ -95,11 +95,12 @@
 }
 
 .card-button:hover {
-    background-color: #3e3e5e;
+    background-color: var(--accent-color);
+    color: white;
 }
 
 .card-address {
-    color: #6c757d;
+    color: var(--secondary-color);
     font-size: 0.95rem;
     margin-bottom: 15px;
     line-height: 1.4;
@@ -108,12 +109,13 @@
 .card-content h3 {
     font-size: 1.2rem;
     margin-bottom: 5px;
-    color: #1e1e2e;
+    color: var(--text-color);
 }
 
 .card-content p {
     margin-bottom: 8px;
-    color: #666;
+    color: var(--text-color);
+    opacity: 0.8;
 }
 
 /* Responsive adjustments */
