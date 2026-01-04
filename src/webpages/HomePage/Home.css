@@ -1,3 +1,16 @@
+.hero {
+    background-image: url('/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+}
+
 .info-section {
     padding: 60px 20px;
     background-color: var(--bg-color);

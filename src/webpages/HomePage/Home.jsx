@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from '../Navbar'
-import Hero from '../Hero'
 import '../index.css'
 import './Home.css'
 import PropertyShowcase from '../PropertyPage/PropertyShowcase';
@@ -13,7 +12,7 @@ function Home() {
             <Routes>
                 <Route path="/" element={
                     <>
-                        <Hero />
+                        <div className="hero" style={{ backgroundImage: "url('/src/assets/property-thumbnail.jpg')" }} />
                         <div className="info-section">
                             <h2 className="info-title">Why Choose Us</h2>
                             <div className="info-grid">
@@ -35,6 +34,7 @@ function Home() {
                 } />
                 <Route path="/property" element={<Property />} />
                 <Route path="/property/:id" element={<PropertyShowcase />} />
+
             </Routes>
         </div>
     )
