@@ -5,6 +5,7 @@ import './Home.css'
 import PropertyShowcase from '../PropertyPage/PropertyShowcase';
 import Property from '../PropertyPage/Property';
 import Contact from '../ContactPage/Contact';
+import About from '../AboutPage/About';
 
 function Home() {
     return (
@@ -36,6 +37,7 @@ function Home() {
                 <Route path="/property" element={<Property />} />
                 <Route path="/property/:id" element={<PropertyShowcase />} />
                 <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
             </Routes>
         </div>
     )
