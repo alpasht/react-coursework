@@ -65,7 +65,7 @@ function Property() {
         // Numerical range checks for price and bedroom count
         const matchesMinPrice = !filters.minPrice || property.price >= parseInt(filters.minPrice);
         const matchesMaxPrice = !filters.maxPrice || property.price <= parseInt(filters.maxPrice);
-        const matchesBedrooms = !filters.minBedrooms || property.bedrooms >= parseInt(filters.minBedrooms);
+        const matchesBedrooms = !filters.minBedrooms || property.bedrooms === parseInt(filters.minBedrooms);
 
         // Location-specific postcode filtering
         const matchesPostcode = !filters.postcode || property.location.toLowerCase().includes(filters.postcode.toLowerCase());
