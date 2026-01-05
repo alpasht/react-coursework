@@ -31,7 +31,7 @@ function Property() {
                 return res.json()
             })
             .then((data) => {
-                setProperties(data.properties || data)
+                setProperties(data.properties)
                 setLoading(false)
             })
             .catch((err) => {
