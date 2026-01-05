@@ -18,6 +18,7 @@ function PropertyCard({ property, onFavourite, isFavourite }) {
                         e.target.src = propertyThumbnail
                     }}
                 />
+                {/* Dynamic 'New' Badge: Properties added in 2024 or later are highlighted */}
                 {property.added?.year >= 2024 && <div className="card-badge">New</div>}
                 <button
                     className="favourite-btn"

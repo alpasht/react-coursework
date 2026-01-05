@@ -48,10 +48,16 @@
     /* stop navbar stretching too much */
 }
 
-.navbar img {
+.navbar-logo {
     display: flex;
-    height: 100px;
-    width: 120px;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: "DM Serif Text", serif;
+    padding-left: 20px;
+    letter-spacing: -1px;
 }
 
 /* Hamburger Menu Styles */

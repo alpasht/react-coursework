@@ -1,14 +1,14 @@
 import './About.css';
 import propertyImage from '../../assets/property-thumbnail.jpg';
-import happyCoworkersImg from '/src/assets/happyCoworkersImg.jpg';
-import ourVisionImg from '/src/assets/ourVisionImg.jpg';
+import happyCoworkersImg from '../../assets/happyCoworkersImg.jpg';
+import ourVisionImg from '../../assets/ourVisionImg.jpg';
 
 function About() {
     return (
         <div className="about-page">
 
 
-            <div className="about-section">
+            <div className="about-section animate-in">
                 <div className="about-grid">
                     <div className="about-image">
                         <img src={ourVisionImg} alt="Our Vision" />

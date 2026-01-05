@@ -2,7 +2,7 @@ import './Contact.css';
 
 function Contact() {
     return (
-        <div className="contact-page">
+        <div className="contact-page animate-in">
             <div className="contact-header">
                 <h1>Get in Touch</h1>
                 <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>

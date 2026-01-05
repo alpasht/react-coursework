@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Home from './HomePage/Home'
 
-import Footer from '../Footer';
+import Footer from '../components/Footer';
 
 function App() {
     return (

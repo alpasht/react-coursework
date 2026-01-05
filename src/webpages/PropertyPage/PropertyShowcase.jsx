@@ -49,7 +49,7 @@ function PropertyShowcase() {
 
     return (
         <>
-            <div className="section-container">
+            <div className="section-container animate-in">
                 <div className="left-section">
                     <h1>{property.type} in {property.location}</h1>
                     <ImageGallery items={images} />

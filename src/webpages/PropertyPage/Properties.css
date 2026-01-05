@@ -46,9 +46,6 @@
     object-fit: cover;
 }
 
-.property-card:hover .card-image {
-    transform: scale(1.05);
-}
 
 .card-badge {
     position: absolute;

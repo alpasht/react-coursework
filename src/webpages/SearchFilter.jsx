@@ -6,9 +6,12 @@ import './SearchFilter.css';
  * using various criteria like type, price, bedrooms, date, and postcode.
  */
 const SearchFilter = ({ filters, setFilters }) => {
-    // Local state for handling input changes before applying
+    // Local state for handling input changes before applying.
+    // This UX pattern (Local -> Global) prevents the UI from potentially lagging 
+    // by only triggering heavy filtering logic once the 'Apply' button is clicked.
     const [localFilters, setLocalFilters] = useState(filters);
 
+    // Generic change handler for all form inputs
     const handleChange = (e) => {
         const { name, value } = e.target;
         setLocalFilters(prev => ({
@@ -17,6 +20,7 @@ const SearchFilter = ({ filters, setFilters }) => {
         }));
     };
 
+    // Pushes the locally modified filters up to the main Page state
     const handleApply = () => {
         setFilters(localFilters);
     };
