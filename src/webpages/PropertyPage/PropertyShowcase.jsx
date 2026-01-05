@@ -25,31 +25,33 @@ function PropertyShowcase() {
 
     // images for the property showcase
     const images = [
-        {
-            original: "https://picsum.photos/id/1018/1000/600/",
-            thumbnail: "https://picsum.photos/id/1018/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1015/1000/600/",
-            thumbnail: "https://picsum.photos/id/1015/250/150/",
-        },
-        {
-            original: "https://picsum.photos/id/1019/1000/600/",
-            thumbnail: "https://picsum.photos/id/1019/250/150/",
-        },
-    ]
+        property.thumbnailpicture,
+        property.gallerypicture1,
+        property.gallerypicture2,
+        property.gallerypicture3,
+        property.gallerypicture4,
+        property.gallerypicture5,
+        property.gallerypicture6,
+        property.gallerypicture7,
+    ].filter(Boolean)  // removes undefined/null
+        .map(src => ({
+            original: src,
+            thumbnail: src,
+        }));
 
-
+    const floorPlan = [
+        property.floorplan,
+    ].filter(Boolean)
+        .map(src => ({
+            original: src,
+            thumbnail: src,
+        }));
 
     return (
         <>
             <div className="section-container">
                 <div className="left-section">
                     <h1>{property.type} in {property.location}</h1>
-                    {/* Add your design here */}
-                    <img src={property.picture} alt={property.location} />
-                    <p>{property.description}</p>
-
                     <ImageGallery items={images} />
                 </div>
 
@@ -66,10 +68,19 @@ function PropertyShowcase() {
                             <p>{property.description}</p>
                         </TabPanel>
                         <TabPanel>
-                            <p>Floor Plan Placeholder</p>
+                            <img src={property.floorplan} alt="Floor Plan" className="floor-plan" />
                         </TabPanel>
                         <TabPanel>
-                            <p>Map Placeholder</p>
+                            <div className="map-container">
+                                <iframe
+                                    title="Property Location"
+                                    width="100%"
+                                    height="450"
+                                    style={{ border: 0, borderRadius: '15px' }}
+                                    src={property.googleMapsEmbed || `https://maps.google.com/maps?q=${encodeURIComponent(property.location)}&output=embed`}
+                                    allowFullScreen
+                                ></iframe>
+                            </div>
                         </TabPanel>
                     </Tabs>
                 </div>
