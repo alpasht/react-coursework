@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
 import SearchFilter from './SearchFilter';
 
-function SearchBox({ searchTerm, setSearchTerm }) {
+function SearchBox({ searchTerm, setSearchTerm, filters, setFilters }) {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     // function to toggle the filter menu, change state to opposite of what is currently active
     const toggleFilter = () => {
@@ -27,7 +27,7 @@ function SearchBox({ searchTerm, setSearchTerm }) {
                 </div>
 
             </div>
-            {isFilterOpen && <SearchFilter />}
+            {isFilterOpen && <SearchFilter filters={filters} setFilters={setFilters} />}
         </div>
     )
 }

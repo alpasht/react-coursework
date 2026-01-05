@@ -1,4 +1,5 @@
 import PropertyGrid from "./PropertyGrid";
+import PropertyCard from "./PropertyCard";
 import './Properties.css';
 
 function FavouriteProperties({ favouriteProperties, onRemoveFavourite }) {
@@ -8,25 +9,17 @@ function FavouriteProperties({ favouriteProperties, onRemoveFavourite }) {
             <PropertyGrid
                 items={favouriteProperties}
                 emptyMessage="You have no favourite properties"
-                renderItems={properties => (
-                    <div className="property-card">
-                        <div className="card-content">
-                            <strong>{properties.type}</strong>
-                            <div className="card-address">{properties.location}</div>
-                            <div className="card-price">£{properties.price.toLocaleString()}</div>
-                            <button
-                                className="card-button"
-                                onClick={() => onRemoveFavourite(properties)}
-                                style={{ marginTop: '10px' }}
-                            >
-                                Remove
-                            </button>
-                        </div>
-                    </div>
+                renderItems={property => (
+                    <PropertyCard
+                        key={property.id}
+                        property={property}
+                        onFavourite={onRemoveFavourite}
+                        isFavourite={true}
+                    />
                 )}
             />
         </div>
     )
 }
 
-export default FavouriteProperties
+export default FavouriteProperties;

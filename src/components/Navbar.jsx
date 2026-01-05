@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/minimalist-logo.jpg'
-import ThemeWidget from '../../components/ThemeWidget';
+import ThemeWidget from './ThemeWidget';
 
 function Navbar() {
 
@@ -19,7 +19,9 @@ function Navbar() {
         <>
             <nav className="navbar-container">
                 <div className="navbar">
-                    <img src={Logo} alt="minimalist logo" className="logo" />
+                    <Link to="/" className="navbar-logo">
+                        <img src={Logo} alt="Logo" />
+                    </Link>
 
                     <div className="hamburger" onClick={toggleMenu}>
                         <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />

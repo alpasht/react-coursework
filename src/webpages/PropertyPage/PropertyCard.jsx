@@ -10,7 +10,7 @@ function PropertyCard({ property, onFavourite, isFavourite }) {
         <div className="property-card">
             <div className="card-image-container">
                 <img
-                    src={property.picture}
+                    src={property.thumbnailpicture}
                     alt={property.location}
                     className="card-image"
                     onError={(e) => {
@@ -18,7 +18,7 @@ function PropertyCard({ property, onFavourite, isFavourite }) {
                         e.target.src = propertyThumbnail
                     }}
                 />
-                <div className="card-badge">{property.type}</div>
+                {property.added?.year >= 2024 && <div className="card-badge">New</div>}
                 <button
                     className="favourite-btn"
                     onClick={(e) => {
@@ -34,9 +34,9 @@ function PropertyCard({ property, onFavourite, isFavourite }) {
                 </button>
             </div>
             <div className="card-content">
-                <h3>{property.type}</h3>
+                <h3>{property.location}</h3>
+                <p>{property.type}</p>
                 <p>{property.bedrooms} Bedrooms</p>
-                <p>{property.location}</p>
                 <div className="card-price">£{property.price.toLocaleString()}</div>
 
                 <Link to={`/property/${property.id}`} className="card-button">

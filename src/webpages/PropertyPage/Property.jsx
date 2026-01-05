@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from '../Navbar';
 import SearchBox from '../SearchBox';
 import PropertyGrid from './PropertyGrid';
 import PropertyCard from './PropertyCard';
@@ -14,6 +13,15 @@ function Property() {
     const [properties, setProperties] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [filters, setFilters] = useState({
+        type: '',
+        minPrice: '',
+        maxPrice: '',
+        minBedrooms: '',
+        dateFrom: '',
+        dateTo: '',
+        postcode: ''
+    });
 
     useEffect(() => {
         fetch('/properties.json')
@@ -41,8 +49,30 @@ function Property() {
         setFavouriteProperties(favouriteProperties.filter(p => p.id !== property.id))
     }
 
-    const filteredProperties = properties.filter((property) =>
-        property.location.toLowerCase().includes(searchTerm.toLowerCase()))
+    const filteredProperties = properties.filter((property) => {
+        const matchesSearch = property.location.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesType = !filters.type || property.type.toLowerCase() === filters.type.toLowerCase();
+        const matchesMinPrice = !filters.minPrice || property.price >= parseInt(filters.minPrice);
+        const matchesMaxPrice = !filters.maxPrice || property.price <= parseInt(filters.maxPrice);
+        const matchesBedrooms = !filters.minBedrooms || property.bedrooms >= parseInt(filters.minBedrooms);
+        const matchesPostcode = !filters.postcode || property.location.toLowerCase().includes(filters.postcode.toLowerCase());
+
+        // Date filtering
+        let matchesDate = true;
+        if (filters.dateFrom || filters.dateTo) {
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const propertyDate = new Date(property.added.year, months.indexOf(property.added.month), property.added.day);
+
+            if (filters.dateFrom) {
+                matchesDate = matchesDate && propertyDate >= new Date(filters.dateFrom);
+            }
+            if (filters.dateTo) {
+                matchesDate = matchesDate && propertyDate <= new Date(filters.dateTo);
+            }
+        }
+
+        return matchesSearch && matchesType && matchesMinPrice && matchesMaxPrice && matchesBedrooms && matchesPostcode && matchesDate;
+    });
 
     return (
         <div className="property-container">
@@ -51,7 +81,12 @@ function Property() {
             <Routes>
                 <Route path="/" element={
                     <>
-                        <SearchBox searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+                        <SearchBox
+                            searchTerm={searchTerm}
+                            setSearchTerm={setSearchTerm}
+                            filters={filters}
+                            setFilters={setFilters}
+                        />
                         {loading && <p>Loading properties...</p>}
                         {error && <p>Error: {error}</p>}
                         {!loading && !error && (
